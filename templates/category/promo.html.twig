@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Промо{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('/css/category/index.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+    <main>
+        <div class="container">
+            <h1 class="main-h1">
+                Промо
+            </h1>
+
+            <p class="main-p">
+                На данной странице изображены промо.
+            </p>
+
+            {% for article in article_list %}
+                <div class="article_block">
+                    <h2 class="main-h2">{{ article.name }}</h2>
+
+                    <p class="main-p">{{ article.text }}</p>
+
+                    <p class="main-p">{{ article.date|date('m.d.y H:i') }} по Московскому времени</p>
+
+                    <img class="image" src="/article_images/{{ article.photoFileName }}" alt="Картинка статьи">
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+
+{% endblock %}

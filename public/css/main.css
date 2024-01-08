@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --white-color: #f6f6f6;
+    --gray-and-white-color: #a9a9a9;
+    --black-color-text: #4D4D4D;
+    --gray-color: #f1f1f1;
+
+    --accent-color: #4681ce;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body, header, footer {
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--white-color);
+    margin: 0;
+}
+
+.container {
+    margin-left: 25%;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+.main-h2 {
+    color: var(--black-color-text);
+
+    font-size: 26px;
+    font-weight: 700;
+
+    width: 800px;
+}
+
+.main-p {
+    color: var(--black-color-text);
+    font-weight: 400;
+    font-size: 18px;
+
+    width: 800px;
+}
+
+.main-h1 {
+    color: var(--black-color-text);
+
+    font-size: 36px;
+    font-weight: 700;
+    width: 800px;
+}
+
+.nav-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: var(--gray-color);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.nav-li a {
+    display: block;
+
+    color: var(--black-color-text);
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 18px;
+
+    padding: 8px 16px;
+}
+
+.nav-li a.active {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+
+    text-decoration: underline;
+}
+
+.nav-li a:hover:not(.active) {
+    background-color: var(--gray-and-white-color);
+    color: var(--white-color);
+}
+
+@media screen and (max-width: 1200px) {
+    .main-h1, .main-h2, .main-p {
+        width: 600px;
+    }
+}

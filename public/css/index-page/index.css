@@ -1,0 +1,5 @@
+@import url("/css/main.css");
+
+.main-h1 strong {
+    color: var(--accent-color);
+}
