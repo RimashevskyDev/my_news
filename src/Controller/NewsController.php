@@ -19,24 +19,36 @@ class NewsController extends AbstractController
     #[Route('/category/news', name: 'app_category_news')]
     public function indexNews(ArticleRepository $articleRepository): Response
     {
-        return $this->render('category/news.html.twig', [
-            'article_list' => $articleRepository->findArticleInCategoryByDate('news'),
+        return $this->render('category/template.html.twig', [
+            'article_list' => $articleRepository->findArticleInCategoryByDate('promo'),
+            'page' => [
+                'name' => 'Новости',
+                'description' => 'На данной странице изображены новости, проходящие в мире.'
+            ]
         ]);
     }
 
     #[Route('/category/promo', name: 'app_category_promo')]
     public function indexPromo(ArticleRepository $articleRepository): Response
     {
-        return $this->render('category/events.html.twig', [
+        return $this->render('category/template.html.twig', [
             'article_list' => $articleRepository->findArticleInCategoryByDate('promo'),
+            'page' => [
+                'name' => 'Промо',
+                'description' => 'На данной странице изображены промо.'
+            ]
         ]);
     }
 
     #[Route('/category/events', name: 'app_category_events')]
     public function indexEvents(ArticleRepository $articleRepository): Response
     {
-        return $this->render('category/events.html.twig', [
-            'article_list' => $articleRepository->findArticleInCategoryByDate('events'),
+        return $this->render('category/template.html.twig', [
+            'article_list' => $articleRepository->findArticleInCategoryByDate('promo'),
+            'page' => [
+                'name' => 'Мероприятия',
+                'description' => 'На данной странице изображены мероприятия, проходящие в мире.'
+            ]
         ]);
     }
 

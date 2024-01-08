@@ -4,8 +4,6 @@ let element = null;
 
 switch (slice_href) {
     case 'news':
-        console.log('1');
-        console.log(document.getElementById("nav-news"));
         element = document.getElementById("nav-news");
         break;
 
@@ -15,6 +13,10 @@ switch (slice_href) {
 
     case 'events':
         element = document.getElementById("nav-events");
+        break;
+
+    case 'add':
+        element = document.getElementById("nav-add");
         break;
 
     case '':

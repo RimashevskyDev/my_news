@@ -11,44 +11,61 @@
 
     <main>
         <div class="container">
-            <h1 class="main-h1">
-                Главная страница сайта <strong>MyNews</strong>
-            </h1>
+            <div class="title-block">
+                <img src="{{ asset('/images/arrow-right.svg') }}" alt="" class="arrow">
+
+                <h1 class="main-h1">
+                    Главная страница сайта <strong>MyNews</strong>
+                </h1>
+            </div>
 
             <h2 class="main-h2">
                 Описание сайта:
             </h2>
 
             <p class="main-p">
+                Наш сайт предоставляет статьи для всех пользователей.
                 Я сделал сайт, чтобы вы могли протестировать качество работы, а так же протестировать функционал сайта.
                 Сделано удобное навигационное меню и быстро накинут был сам дизайн для сайта, могут быть косяки, ибо это
                 в прод не отправляется.
                 Этот сайт был сделан за достаточно быстрое время на скорую руку, поэтому могут быть недоработки.
-                Используется БД - MySQL, просто, поточу
-                что у меня уже была развернута локалка. В ином случае почти любая из популярных баз данных без проблем.
+                Используется БД - MySQL, просто, потому что у меня уже была развернута локалка.
+                В ином случае почти любая из популярных баз данных без проблем.
             </p>
 
             <h2 class="main-h2">
-                Три последние статьи:
+                Наши три последние статьи
             </h2>
 
             <p class="main-p">
-                Здесь показаны три последние статьи из трех наших категорий, которые присутствуют на сайте,
+                Три статьи, данные здесь взяты из трех наших категорий: Промо, Мероприятия и Новости.
+                Статьи показаны самые паоследние по дате. Здесь показаны три последние статьи из трех наших категорий,
+                которые присутствуют на сайте,
                 вы можете найти статьи нужной категории, перейдя в категорию в навигационном меню.
             </p>
 
-            {% for article in article_list %}
-                <div class="article_block">
-                    <h2 class="main-h2">{{ article.name }}</h2>
+            <div class="last-article-block">
+                {% for article in article_list %}
+                    <div class="article_block">
+                        <div class="image-block">
+                            <div class="blue-bg-opacity"></div>
+                            <img class="image-article" src="/article_images/{{ article.photoFileName }}"
+                                 alt="Картинка статьи">
+                            <h2 class="main-h2">{{ article.name }}</h2>
+                        </div>
 
-                    <p class="main-p">{{ article.text }}</p>
+                        <p class="main-p">{{ article.text|length > 300 ? article.text|slice(0, 300) ~ '...' : article.text }}</p>
 
-                    <p class="main-p">{{ article.date|date('m.d.y H:i') }} по Московскому времени</p>
+                        <p class="main-p">{{ article.date|date('m.d.y H:i') }} по Московскому времени</p>
 
-                    <img class="image" src="/article_images/{{ article.photoFileName }}" alt="Картинка статьи">
-                </div>
-            {% endfor %}
+                        <div class="button-center">
+                            <div class="sumbit-button">
+                                Читать полностью
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </main>
-
 {% endblock %}

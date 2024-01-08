@@ -3,3 +3,14 @@
 .main-h1 strong {
     color: var(--accent-color);
 }
+
+.title-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.arrow {
+    width: 35px;
+    height: 35px;
+}

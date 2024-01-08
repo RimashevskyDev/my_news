@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
-    --white-color: #f6f6f6;
-    --gray-and-white-color: #a9a9a9;
-    --black-color-text: #4D4D4D;
-    --gray-color: #f1f1f1;
+    --white-color: #F8F8F8;
+    --gray-and-white-color: #E4E4E4;
 
-    --accent-color: #4681ce;
+    --black-color-text: #454545;
+    --gray-color: #C1C1C1;
+
+    --accent-color: #4773E5;
 }
 
 *, *::before, *::after {
@@ -44,7 +45,7 @@ body {
 .main-p {
     color: var(--black-color-text);
     font-weight: 400;
-    font-size: 18px;
+    font-size: 20px;
 
     width: 800px;
 }
@@ -52,9 +53,9 @@ body {
 .main-h1 {
     color: var(--black-color-text);
 
-    font-size: 36px;
     font-weight: 700;
     width: 800px;
+    font-size: 38px;
 }
 
 .nav-ul {
@@ -62,7 +63,7 @@ body {
     margin: 0;
     padding: 0;
     width: 25%;
-    background-color: var(--gray-color);
+    background-color: var(--gray-and-white-color);
     position: fixed;
     height: 100%;
     overflow: auto;
@@ -74,9 +75,21 @@ body {
     color: var(--black-color-text);
     font-weight: 400;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 24px;
 
     padding: 8px 16px;
+}
+
+#nav-name {
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#nav-name strong {
+    color: var(--accent-color);
 }
 
 .nav-li a.active {
@@ -86,9 +99,13 @@ body {
     text-decoration: underline;
 }
 
-.nav-li a:hover:not(.active) {
-    background-color: var(--gray-and-white-color);
-    color: var(--white-color);
+.nav-li a:hover:not(.active):not(#nav-name) {
+    background-color: var(--gray-color);
+}
+
+.nav-logo {
+    width: 25px;
+    height: 25px;
 }
 
 @media screen and (max-width: 1200px) {

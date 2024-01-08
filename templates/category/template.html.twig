@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ page.name }}{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('/css/category/index.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+    <main>
+        <div class="container">
+            <h1 class="main-h1">{{ page.name }}</h1>
+
+            <p class="main-p">{{ page.description }}</p>
+
+            <div class="last-article-block">
+                {% for article in article_list %}
+                    <div class="article_block">
+                        <div class="image-block">
+                            <div class="blue-bg-opacity"></div>
+                            <img class="image-article" src="/article_images/{{ article.photoFileName }}"
+                                 alt="Картинка статьи">
+                            <h2 class="main-h2">{{ article.name }}</h2>
+                        </div>
+
+                        <p class="main-p">{{ article.text|length > 300 ? article.text|slice(0, 300) ~ '...' : article.text }}</p>
+
+                        <p class="main-p">{{ article.date|date('m.d.y H:i') }} по Московскому времени</p>
+
+                        <div class="button-center">
+                            <div class="sumbit-button">
+                                Читать полностью
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

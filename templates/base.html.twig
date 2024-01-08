@@ -16,13 +16,21 @@
 <body>
 
 <ul class="nav-ul">
+    <li class="nav-li"><a id="nav-name">
+            <img src="{{ asset('/images/icon.svg') }}" alt="Логотип" class="nav-logo">
+            <strong>MyNews</strong> - Лучшие статьи
+        </a></li>
+
     <li class="nav-li"><a href="/" id="nav-index">Главная страница</a></li>
     <li class="nav-li"><a href="/category/news/" id="nav-news">Новости</a></li>
     <li class="nav-li"><a href="/category/events/" id="nav-events">Мероприятия</a></li>
     <li class="nav-li"><a href="/category/promo/" id="nav-promo">Промо</a></li>
+    <li class="nav-li"><a href="/" id="nav-about">О нас</a></li>
+    <li class="nav-li"><a href="/add" id="nav-add">Добавить статью</a></li>
 </ul>
 
 {% block body %}{% endblock %}
+
 </body>
 
 <script src="/js/main.js"></script>
